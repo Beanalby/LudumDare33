@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: catIdle
+  m_Name: catJump
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,12 +18,14 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 4ef69c4d3292c7a4b84209e4eb527412, type: 3}
+      value: {fileID: 21300000, guid: 5d45ccd311ae9824998dfcc11ffa8351, type: 3}
+    - time: .5
+      value: {fileID: 21300000, guid: d77b1e9e680fb6c42be48bf57dc390f3, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 1
+  m_SampleRate: 2
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -37,7 +39,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 4ef69c4d3292c7a4b84209e4eb527412, type: 3}
+    - {fileID: 21300000, guid: 5d45ccd311ae9824998dfcc11ffa8351, type: 3}
+    - {fileID: 21300000, guid: d77b1e9e680fb6c42be48bf57dc390f3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0

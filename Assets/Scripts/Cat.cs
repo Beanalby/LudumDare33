@@ -1,30 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class Cat : MonoBehaviour {
+namespace LudumDare33 {
+    [RequireComponent(typeof(Rigidbody2D), typeof(Mover))]
+    public class Cat : MonoBehaviour {
 
-    private Animator anim;
-    private Rigidbody2D rb;
-    private Transform tSprite;
+        private Animator anim;
+        private Rigidbody2D rb;
+        private Mover mover;
 
-    public void Start() {
-        anim = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        tSprite = transform.Find("sprite");
-    }
+        public void Start() {
+            anim = GetComponentInChildren<Animator>();
+            mover = GetComponent<Mover>();
+            rb = GetComponent<Rigidbody2D>();
+        }
 
-    public void Update() {
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal"), 0);
-        anim.SetFloat("hSpeed", Mathf.Abs(rb.velocity.x));
-        // flip the sprite if necessary
-        if ((rb.velocity.x > 0 && tSprite.localScale.x < 0f)
-                || (rb.velocity.x < 0 && tSprite.localScale.x > 0f)) {
-            tSprite.localScale = new Vector3(
-                -tSprite.localScale.x,
-                tSprite.localScale.y,
-                tSprite.localScale.z);
+        public void Update() {
+            if (Input.GetButtonDown("Jump")) {
+                mover.Jump();
             }
+
+        }
+        public void FixedUpdate() {
+            mover.Move(Input.GetAxis("Horizontal"));
+        }
+
     }
-    
 }
