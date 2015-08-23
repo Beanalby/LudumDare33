@@ -63,7 +63,6 @@ namespace LudumDare33 {
                 isJumping = false;
                 didJump = true;
                 if (anim) {
-                    Debug.Log(Time.time + ": jumping");
                     anim.ResetTrigger("didLand");
                     anim.SetTrigger("didJump");
                 }
