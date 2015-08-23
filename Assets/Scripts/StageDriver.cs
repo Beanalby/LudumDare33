@@ -14,6 +14,8 @@ namespace LudumDare33 {
             }
         }
 
+        private bool _isRunning = true;
+        public bool IsRunning { get { return _isRunning; } }
         BirdTarget[] birdTargets;
 
         public void Awake() {
