@@ -50,5 +50,9 @@ namespace LudumDare33 {
             target = StageDriver.Instance.getNewBirdTarget(target);
             anim.SetBool("canIdle", target.isLanded);
         }
-    }
+
+        public void Attacked(Cat cat) {
+            mover.Die();
+        }
+   }
 }

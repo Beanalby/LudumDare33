@@ -1777,6 +1777,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5033194, guid: eb48fd5a6b0f7fe479ff748503dedac1, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143438, guid: eb48fd5a6b0f7fe479ff748503dedac1, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405406, guid: eb48fd5a6b0f7fe479ff748503dedac1, type: 2}
+      propertyPath: triggerMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb48fd5a6b0f7fe479ff748503dedac1, type: 2}
   m_IsPrefabParent: 0

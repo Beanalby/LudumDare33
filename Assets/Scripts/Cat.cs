@@ -20,5 +20,9 @@ namespace LudumDare33 {
         public void FixedUpdate() {
             mover.Move(Input.GetAxis("Horizontal"));
         }
+
+        public void OnTriggerEnter2D(Collider2D other) {
+            other.SendMessage("Attacked", this, SendMessageOptions.DontRequireReceiver);
+        }
     }
 }

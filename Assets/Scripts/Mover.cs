@@ -9,6 +9,7 @@ namespace LudumDare33 {
     public class Mover : MonoBehaviour {
 
         public Sprite deathSprite;
+        public GameObject deathEffect;
         public AudioClip jumpSound, dieSound;
         public float groundDampening = 20f;
         public float maxSpeed = 3;
@@ -112,17 +113,24 @@ namespace LudumDare33 {
         public void Die() {
             if(dieSound)
                 AudioSource.PlayClipAtPoint(dieSound, Camera.main.transform.position);
-            cc.enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            rb.isKinematic = false;
-            rb.velocity = new Vector2(Random.Range(-5, 5), 8);
-            float angle = Random.Range(60, 120);
-            if (Random.Range(0, 2) == 0) {
-                angle = -angle;
+            if (deathSprite) {
+                cc.enabled = false;
+                GetComponent<BoxCollider2D>().enabled = false;
+                rb.isKinematic = false;
+                rb.velocity = new Vector2(Random.Range(-5, 5), 8);
+                float angle = Random.Range(60, 120);
+                if (Random.Range(0, 2) == 0) {
+                    angle = -angle;
+                }
+                rb.angularVelocity = angle;
+                sr.sprite = deathSprite;
+                Destroy(gameObject, 5f);
+            } else {
+                if (deathEffect) {
+                    Instantiate(deathEffect, transform.position, Quaternion.identity);
+                }
+                Destroy(gameObject);
             }
-            rb.angularVelocity = angle;
-            sr.sprite = deathSprite;
-            Destroy(gameObject, 5f);
             this.enabled = false;
             if (OnDeath != null) {
                 OnDeath(this);
