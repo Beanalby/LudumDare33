@@ -21,10 +21,10 @@ namespace LudumDare33 {
         public Text uiScore, uiTime;
         public StageStartListener OnStageStart;
         public StageEndListener OnStageEnd;
-        public GameObject StartStageUI, EndStageUI;
+        public GameObject StartStageUI, EndStageUI, exitButton;
 
         private ShowControls controls;
-        private float timeTotal = 10;
+        private float timeTotal = 30;
         private float timeStart = -1f;
         private int score = 0;
 
@@ -46,6 +46,13 @@ namespace LudumDare33 {
 
         public void Start() {
             birdTargets = FindObjectsOfType<BirdTarget>();
+            uiTime.text = timeTotal.ToString(".0");
+            // web player doesn't need the exit button
+            if (Application.platform == RuntimePlatform.WindowsWebPlayer
+                || Application.platform == RuntimePlatform.OSXWebPlayer
+                || Application.platform == RuntimePlatform.WebGLPlayer) {
+                    GameObject.Destroy(exitButton);
+            }
             controls = ShowControls.CreateDocked(new ControlItem[] {
                 new ControlItem("Use arrow keys to walk left and right",
                     new KeyCode[] { KeyCode.LeftArrow, KeyCode.RightArrow }),
@@ -83,6 +90,9 @@ namespace LudumDare33 {
 
         public void PlayAgainClicked() {
             Application.LoadLevel(Application.loadedLevel);
+        }
+        public void ExitClicked() {
+            Application.Quit();
         }
         #endregion
 

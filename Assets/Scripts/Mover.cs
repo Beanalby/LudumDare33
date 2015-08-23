@@ -10,7 +10,7 @@ namespace LudumDare33 {
 
         public Sprite deathSprite;
         public GameObject deathEffect;
-        public AudioClip jumpSound, dieSound;
+        public AudioClip jumpSound, landSound, dieSound;
         public float groundDampening = 20f;
         public float maxSpeed = 3;
         public float jumpSpeed = 10;
@@ -63,6 +63,9 @@ namespace LudumDare33 {
             }
             if(isGrounded && !wasGrounded && anim && !isJumping) {
                 anim.SetTrigger("didLand");
+                if (landSound) {
+                    AudioSource.PlayClipAtPoint(landSound, Camera.main.transform.position);
+                }
             }
             wasGrounded = cc.isGrounded;
 

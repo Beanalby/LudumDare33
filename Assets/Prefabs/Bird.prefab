@@ -105,7 +105,8 @@ MonoBehaviour:
   deathSprite: {fileID: 0}
   deathEffect: {fileID: 117046, guid: 5423fa4c12e93324f961cf81b5baf8a2, type: 2}
   jumpSound: {fileID: 0}
-  dieSound: {fileID: 0}
+  landSound: {fileID: 0}
+  dieSound: {fileID: 8300000, guid: 3fe833952294a1544b04f726b873aa08, type: 3}
   groundDampening: 20
   maxSpeed: 3
   jumpSpeed: 10
@@ -193,6 +194,10 @@ Prefab:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dieSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fe833952294a1544b04f726b873aa08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 157830}
