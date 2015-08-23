@@ -20,6 +20,5 @@ namespace LudumDare33 {
         public void FixedUpdate() {
             mover.Move(Input.GetAxis("Horizontal"));
         }
-
     }
 }

@@ -13,6 +13,7 @@ namespace LudumDare33 {
         public float groundDampening = 20f;
         public float maxSpeed = 3;
         public float jumpSpeed = 10;
+        public bool applyGravity = true;
         public DeathListener OnDeath;
 
         private bool isJumping = false;
@@ -49,10 +50,16 @@ namespace LudumDare33 {
             }
         }
 
-        public void Move(float x) {
+        public void Move(Vector3 dir) {
+            Move(dir.x, dir.y);
+        }
+
+        public void Move(float x, float y=0) {
             bool isGrounded = cc.isGrounded, didJump=false;
             Vector3 velocity = cc.velocity;
-            velocity.y += Time.deltaTime * Physics2D.gravity.y;
+            if (applyGravity) {
+                velocity.y += Time.deltaTime * Physics2D.gravity.y;
+            }
             if(isGrounded && !wasGrounded && anim && !isJumping) {
                 anim.SetTrigger("didLand");
             }
@@ -71,6 +78,9 @@ namespace LudumDare33 {
             }
 
             velocity.x = Mathf.Lerp(velocity.x, x * maxSpeed, Time.fixedDeltaTime * groundDampening);
+            if (y != 0) {
+                velocity.y = Mathf.Lerp(velocity.y, y * maxSpeed, Time.fixedDeltaTime * groundDampening);
+            }
             if (anim) {
                 anim.SetFloat("hSpeed", Mathf.Abs(cc.velocity.x));
                 // if we jumped this frame, bump up our reported velocity
@@ -90,7 +100,15 @@ namespace LudumDare33 {
             //Debug.Log("isGrounded=" + cc.isGrounded + ", moving " + (velocity * Time.deltaTime).ToString(".000"));
             cc.move(velocity * Time.deltaTime);
         }
-        
+
+        public void Stop() {
+            cc.velocity = Vector3.zero;
+            if (anim) {
+                anim.SetFloat("hSpeed", 0);
+                anim.SetFloat("vSpeed", 0);
+            }
+        }
+
         public void Die() {
             if(dieSound)
                 AudioSource.PlayClipAtPoint(dieSound, Camera.main.transform.position);
