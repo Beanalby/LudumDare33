@@ -12,6 +12,7 @@ namespace LudumDare33 {
         private float idleStart = -1;
 
         public void Start() {
+            StageDriver.Instance.OnStageEnd += OnStageEnd;
             mover = GetComponent<Mover>();
             anim = GetComponent<Animator>();
             GetNewTarget();
@@ -53,6 +54,10 @@ namespace LudumDare33 {
 
         public void Attacked(Cat cat) {
             mover.Die();
+            StageDriver.Instance.OnStageEnd -= OnStageEnd;
+        }
+        public void OnStageEnd() {
+            Destroy(gameObject);
         }
    }
 }

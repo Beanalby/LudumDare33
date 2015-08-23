@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: DefaultShowControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95aa73ddb3c40e44c8f9bf21281a616a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gui: {fileID: 11400000, guid: 29f8bec7e13f734438a3f2143d8edcbe, type: 2}
+  showDuration: 3
+  hideLeftRightOnModifierKeys: 1
+  keyBaseSmall: {fileID: 2800000, guid: 2e3ac3b58cae5f642a2fd236188a9fd9, type: 3}
+  keyBaseLarge: {fileID: 2800000, guid: 70a6fc25904376b43bf2ad2ea846a5aa, type: 3}
+  style: 0
+  fullscreenClearKey: 9
+  fullscreenTitle: 436f6e74726f6c73
+  fullscreenTitleHeight: 100
+  fullscreenMessageLeft: 507265737320
+  fullscreenMessageRight: 746f20636f6e74696e7565
+  position: 0
+  mouseBase: {fileID: 2800000, guid: de4d83187eeb73040aaae16f2829565d, type: 3}
+  mouseLeftClick: {fileID: 2800000, guid: 7e86334a04631e44cae817ab6286f38b, type: 3}
+  mouseMiddleClick: {fileID: 2800000, guid: edf4914bce80f464aac14da0b2f59e93, type: 3}
+  mouseRightClick: {fileID: 2800000, guid: e0a8b41b768d4434e846abf7a2ea78eb, type: 3}
+  mouseWheel: {fileID: 2800000, guid: a43325ced31a4c7428f97b9166b7b542, type: 3}
+  mouseHorizontal: {fileID: 2800000, guid: 3016a5e8ee83c5b40acc296457924d66, type: 3}
+  mouseVertical: {fileID: 2800000, guid: 00a135bd569745147827a398df2ae341, type: 3}
+  mouseHorizontalAndVertical: {fileID: 2800000, guid: 93d627e830f4eb4429de8fabb1313af2,
+    type: 3}
+  plus: {fileID: 2800000, guid: fe76cfee8787aa745ad5fad36db2fa1b, type: 3}
+  destroyWhenDone: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
