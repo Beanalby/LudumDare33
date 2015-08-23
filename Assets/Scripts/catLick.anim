@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: catIdle
+  m_Name: catLick
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,12 +18,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 756ef892c8358a246b02045d4e5c8d9e, type: 3}
+      value: {fileID: 21300000, guid: ab7ee9184ca90fa4b8bdaf3545ae17c2, type: 3}
+    - time: .333333343
+      value: {fileID: 21300000, guid: b16f3476f0dab534483150ec19af5435, type: 3}
+    - time: .666666687
+      value: {fileID: 21300000, guid: 665289c36a2f5734fb0d71742448501c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 1
+  m_SampleRate: 3
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -37,7 +41,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 756ef892c8358a246b02045d4e5c8d9e, type: 3}
+    - {fileID: 21300000, guid: ab7ee9184ca90fa4b8bdaf3545ae17c2, type: 3}
+    - {fileID: 21300000, guid: b16f3476f0dab534483150ec19af5435, type: 3}
+    - {fileID: 21300000, guid: 665289c36a2f5734fb0d71742448501c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
@@ -45,7 +51,7 @@ AnimationClip:
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

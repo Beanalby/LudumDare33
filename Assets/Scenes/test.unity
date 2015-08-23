@@ -1355,6 +1355,11 @@ Prefab:
       propertyPath: jumpSpeed
       value: 8.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21203002, guid: eb48fd5a6b0f7fe479ff748503dedac1, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 756ef892c8358a246b02045d4e5c8d9e,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb48fd5a6b0f7fe479ff748503dedac1, type: 2}
   m_IsPrefabParent: 0
