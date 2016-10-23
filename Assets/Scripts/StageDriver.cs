@@ -48,9 +48,7 @@ namespace LudumDare33 {
             birdTargets = FindObjectsOfType<BirdTarget>();
             uiTime.text = timeTotal.ToString(".0");
             // web player doesn't need the exit button
-            if (Application.platform == RuntimePlatform.WindowsWebPlayer
-                || Application.platform == RuntimePlatform.OSXWebPlayer
-                || Application.platform == RuntimePlatform.WebGLPlayer) {
+            if (Application.platform == RuntimePlatform.WebGLPlayer) {
                     GameObject.Destroy(exitButton);
             }
             controls = ShowControls.CreateDocked(new ControlItem[] {
